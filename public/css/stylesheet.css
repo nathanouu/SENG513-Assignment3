@@ -1,33 +1,27 @@
+/*
+    Name:             Hannah Wright
+    ID:               10171450
+    Tutorial Section: B02
+*/
+
+/****************** SOURCE INFORMATION FOR CSS STYLES ******************/
+/* To start, I started my design using the Holy Grail layout provided to
+/* us in the lecture notes. That is, I got the code from the following:
+/*		http://codepen.io/pfederl/pen/bgRvqR?editors=1100
+/* For insperation of the layout, I used the folloiwng image:
+/*		https://image.shutterstock.com/z/stock-vector-concept-chat-messages-web-interface-application-speech-bubbles-sms-messages-flat-simple-361362722.jpg */
+/* Throughout the rest of thi document, I have referenced other pieces
+/* of code that was either copied directly or simply used as reference.
+/***********************************************************************/
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,800);
 @import url(https://fonts.googleapis.com/css?family=Quicksand:400,700);
-
-/* https://image.shutterstock.com/z/stock-vector-concept-chat-messages-web-interface-application-speech-bubbles-sms-messages-flat-simple-361362722.jpg */
-/* https://coolors.co/242b33-363d45-ffd9da-ea638c-89023e */
-/*******************************************************/
-/*				  	 Main Styles					   */
-/*******************************************************/
 
 body {
 	color: #02111b;
 	font-family: 'Raleway', sans-serif;
 	margin: 0 auto;
 }
-
-/*h1 {
-	font-family: 'Quicksand', sans-serif;
-	font-size: 3em;
-	margin-bottom: 10px;
-	margin-top: 0px;
-	text-align: center;
-}
-
-h2  {
-	margin-top: 0px;
-	text-align: center;
-}*/
-
-
-/** STOLEN HOLY GRAIL LAYOUT **/
 
 body {
 	background-color: grey;
@@ -44,7 +38,7 @@ body {
 	background: #b9314f;
 	align-self: stretch;
 
-	/* http://www.colorzilla.com/gradient-editor/ */
+	/* Gradient from: http://www.colorzilla.com/gradient-editor/ */
 	background: -moz-linear-gradient(45deg, #b9314f 50%, #ec6c26 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(45deg, #b9314f 50%,#ec6c26 100%); /* Chrome10-25,Safari5.1-6 */
 }
@@ -84,8 +78,7 @@ body {
 	align-content: center;
 }
 
-/* http://the-echoplex.net/flexyboxes/ */
-/*https://css-tricks.com/replicating-google-hangouts-chat/*/
+/* Reference: https://css-tricks.com/replicating-google-hangouts-chat/*/
 #main > chat .chat {
 	width: 100%;
 	height: 100%;
@@ -107,8 +100,7 @@ body {
 }
 
 
-/* http://ilikepixels.co.uk/drop/bubbler/ */
-
+/* Reference: http://ilikepixels.co.uk/drop/bubbler/ */
 #main > chat .messages .message {
   margin: 5px;
 	padding: 10px;
@@ -235,7 +227,6 @@ body {
 	display: table-row;
 }
 
-
 #main > users .online-users .user {
 	display: table-cell;
 	vertical-align: middle;
@@ -253,7 +244,7 @@ body {
 	border-bottom: 3px solid #363d45;
 }
 
-/* Too narrow to support three columns */
+
 @media all and (max-width: 640px) {
 	#main, #page {
 			flex-direction: column;
@@ -286,8 +277,14 @@ body {
 	}
 }
 
+@-moz-document url-prefix() {
+	.flexbox-parent {
+		height: 91%;
+	}
+}
 
-/* https://jsfiddle.net/MadLittleMods/LmYay/ */
+
+/* Reference: https://jsfiddle.net/MadLittleMods/LmYay/ */
 html, body
 {
     height: 100%;
@@ -304,19 +301,11 @@ html, body
 .fill-area {
     display: flex;
     flex-direction: row;
-
-    justify-content: flex-start; /* align items in Main Axis */
-    align-items: stretch; /* align items in Cross Axis */
-    align-content: stretch; /* Extra space in Cross Axis */
-
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
 }
 
 .fill-area-content {
     overflow: auto;
-}
-
-@-moz-document url-prefix() {
-	.flexbox-parent {
-		height: 91%;
-	}
 }

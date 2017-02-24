@@ -1,4 +1,15 @@
-// http://www.tamas.io/simple-chat-application-using-node-js-and-socket-io/
+/*
+    Name:             Hannah Wright
+    ID:               10171450
+    Tutorial Section: B02
+*/
+
+/******************** SOURCE INFORMATION FOR CLIENT *********************/
+/* To start, I copied the example chat program provided as a base program.
+/* For both the client and the server, I used the following as references:
+/*    http://www.tamas.io/simple-chat-application-using-node-js-and-socket-io/
+/*    http://www.tamas.io/advanced-chat-using-node-js-and-socket-io-episode-1/
+/***********************************************************************/
 
 var express = require('express');
 var cookieParser = require('cookie-parser');
@@ -48,7 +59,7 @@ io.on('connection', function(client){
 				let now = new  Date();
 				let colour_val = "default";
 
-				// https://obviate.io/2015/07/23/socketio-irc-style-tutorial-part-4-the-client-code/
+				// Regular expression source: https://obviate.io/2015/07/23/
 				let nick_test = /^\/nick ([a-zA-Z0-9]{0,20})/g;
 				let nick_request = nick_test.exec(data);
 				let colour_test = /^\/nickcolor ([0-9a-fA-F]{6})/g;
@@ -71,7 +82,7 @@ io.on('connection', function(client){
 				} else {
 						let message_data = { message: data,
 													 		   user: online_users[client.id],
-																 // http://stackoverflow.com/questions/3552461/
+																 // Format date source: http://stackoverflow.com/questions/3552461/
 																 server_time: dateFormat(now, "mmmm dS, yyyy - h:MM TT")};
 				if(chat_history.length >= 200) // only store the last 200 messages
 						chat_history.splice(0,1);

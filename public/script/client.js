@@ -1,4 +1,16 @@
-// shorthand for $(document).ready(...)
+/*
+    Name:             Hannah Wright
+    ID:               10171450
+    Tutorial Section: B02
+*/
+
+/******************** SOURCE INFORMATION FOR CLIENT *********************/
+/* To start, I copied the example chat program provided as a base program.
+/* For both the client and the server, I used the following as references:
+/*    http://www.tamas.io/simple-chat-application-using-node-js-and-socket-io/
+/*    http://www.tamas.io/advanced-chat-using-node-js-and-socket-io-episode-1/
+/***********************************************************************/
+
 $(function() {
     var socket = io.connect('http://127.0.0.1:3000');
 
@@ -103,6 +115,7 @@ $(function() {
         chat_div.scrollTop = chat_div.scrollHeight;
     }
 
+    /* Stolen from: https://www.w3schools.com/js/js_cookies.asp */
     function setCookie(cname, cvalue, exdays) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
